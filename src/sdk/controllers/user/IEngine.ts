@@ -1,9 +1,6 @@
 export type playerMove = "X" | "O" | "";
-export type board = [
-    [playerMove, playerMove, playerMove],
-    [playerMove, playerMove, playerMove],
-    [playerMove, playerMove, playerMove]
-];
+export type board = playerMove[][];
+
 
 
 export default interface IEngine {

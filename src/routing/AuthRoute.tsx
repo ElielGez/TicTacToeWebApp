@@ -17,7 +17,7 @@ const AuthRoute = ({ component, ...rest }: any) => {
                 render={(props) => {
                     if (token) {
                         return (
-                            <div>
+                            <div style={{ height: '100%', display: 'flex' }}>
                                 <Component {...props} />
                             </div>
                         );

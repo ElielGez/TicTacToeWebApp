@@ -54,7 +54,7 @@ export class ApiClient implements IApiClient {
         this.setAuthorization();
         const headers = { ...this.headers };
         if (this.bodyType === 'JSON') headers['Content-Type'] = contentTypes.json;
-        const requestOptions = { ...options, headers, credentials: 'include' };
+        const requestOptions = { ...options, headers };
         const response = await fetch(this.mergeUrl(url), requestOptions);
         this.bodyType = 'JSON';
         if (!response.ok) {
@@ -65,11 +65,13 @@ export class ApiClient implements IApiClient {
         let res: any = 'SUCCESS';
         try {
             res = await response.json();
+            console.log(res);
             if (!res?.success) {
                 throw new Error(`${url}, error`);
             }
         } catch (e) {
             //error json
+            console.log(e);
         }
         return res;
     }

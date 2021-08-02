@@ -8,7 +8,11 @@ type Props = {
 }
 const Cell = ({ cellValue, handleCellClick }: Props) => {
     return (
-        <div className="board-cell" onClick={() => handleCellClick()}>{cellValue}</div>
+        <div className="board-cell" onClick={() => handleCellClick()}>
+            <span className="material-icons">
+                {cellValue === 'X' ? 'close' : cellValue === 'O' ? 'circle' : cellValue}
+            </span>
+        </div>
     );
 };
 

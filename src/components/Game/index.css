@@ -12,12 +12,17 @@
 }
 .board-cell{
     height: inherit;
-    border: 3px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     /* border-radius: 5px; */
     flex: 1;
     cursor: pointer;
+    display:flex;
     
 }
+.board-cell .material-icons{
+    font-size:60px;
+    margin:auto;
+}
 .board-cell:hover{
-    background: rgb(199, 199, 199);
+    background: rgb(255 232 232);
 }
